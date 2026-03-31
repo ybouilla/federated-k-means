@@ -1,6 +1,10 @@
 # Implementation of Federerated K-means and its comparison with local k-means
 
-## K-means algorithm
+## Requirements
+
+`pip install scikit-learn numpy matplotlib`
+
+## K-means mini batch algorithm
 
 Common clustering algorithm that uses mean of euclidian distances to distinguish several clusters.
 
