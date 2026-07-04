@@ -1,23 +1,36 @@
-# Implementation of Federerated K-means and its comparison with local k-means
+# Implementation of Federerated K-means, Federated fuzzy k-means and its comparison with local k-means
 
-## K-means algorithm
+## Requirements
+
+`pip install scikit-learn numpy matplotlib`
+
+## K-means mini batch algorithm
 
 Common clustering algorithm that uses mean of euclidian distances to distinguish several clusters.
 
 ## Demonstration
 
 I provided here a notebook comparing the results of a Federated k-means simulation with a local k-mean, using `sklearn mini batch k -means` algorithm. 
-I tracked the evolution of euclidian distance over several rounds, compared the k-means objective function and the Davie Boulin.
+I tracked the evolution of euclidian distance over several rounds, compared the k-means objective function and the Davie Boulin score.
 
 
+## Federated Dataset
+ Dataset are made using `make_blob` and then dispatched on 4 different clients (named alice, bob, charlie, danny)
+
+![img](img/fed_datasets.png)
 ## Results
 
-This results are shown for 4 clients (alice, bob, charlie, danny), and for `k=4`.
+Results are shown for 4 clients (alice, bob, charlie, danny), and for `k=4`.
 Each client gives the position of the computed mean cluster.
 
 ![img1](img/img1.png)
 
+
+I also displayed results got with the usage of federated fuzzy k means
+
+![img2](img/comp_fuzzy_fed_kmeans.png)
+
 ## Limitations
 
 Even if Federated k-means converges, this poc suffers from secrutiy issues:
-if `k=n_samples`, then it will be possible to extract all points. One could use a Ssecure Aggregation method to mitigate this edge case.
+if `k=n_samples`, then it will be possible to extract all points. One could use a Secure Aggregation or Homomorphic encryption methods to mitigate this edge case.
