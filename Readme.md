@@ -1,4 +1,4 @@
-# Implementation of Federerated K-means and its comparison with local k-means
+# Implementation of Federerated K-means, Federated fuzzy k-means and its comparison with local k-means
 
 ## Requirements
 
@@ -14,12 +14,21 @@ I provided here a notebook comparing the results of a Federated k-means simulati
 I tracked the evolution of euclidian distance over several rounds, compared the k-means objective function and the Davie Boulin score.
 
 
+## Federated Dataset
+ Dataset are made using `make_blob` and then dispatched on 4 different clients (named alice, bob, charlie, danny)
+
+![img](img/fed_datasets.png)
 ## Results
 
-This results are shown for 4 clients (alice, bob, charlie, danny), and for `k=4`.
+Results are shown for 4 clients (alice, bob, charlie, danny), and for `k=4`.
 Each client gives the position of the computed mean cluster.
 
 ![img1](img/img1.png)
+
+
+I also displayed results got with the usage of federated fuzzy k means
+
+![img2](img/comp_fuzzy_fed_kmeans.png)
 
 ## Limitations
 
